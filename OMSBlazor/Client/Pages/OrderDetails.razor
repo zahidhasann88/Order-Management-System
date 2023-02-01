@@ -1,0 +1,109 @@
+﻿@page "/fetchorderdetails"
+@using OMSBlazor.Shared.Models
+@using System.Net.Http.Json
+@inject HttpClient Http
+<h1>Order Data</h1>
+<div class="row">
+    <div class="col-md-6">
+        <a href='/order/add' class="btn btn-primary" role="button">
+            <i class="fas fa-user-plus"></i>
+            Add Order
+        </a>
+    </div>
+    <div class="input-group col">
+        <input type="text" class="form-control" placeholder="Search Order by name"
+               @bind="SearchString" @bind:event="oninput" @onkeyup="FilterOrder" />
+        @if (SearchString.Length > 0)
+        {
+            <div class="input-group-append">
+                <button class="btn btn-danger" @onclick="ResetSearch">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        }
+    </div>
+</div>
+<br />
+@if (orderList == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table table-striped align-middle table-bordered">
+        <thead class="table-success">
+            <tr>
+                <th>Order ID</th>
+                <th>Order Name</th>
+                <th>State</th>
+                <th>Product Name</th>
+                <th>Quantity</th>
+                <th>Type</th>
+                <th>Width</th>
+                <th>Height</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var order in orderList)
+            {
+                <tr>
+                    <td>@order.OrderId</td>
+                    <td>@order.OrderName</td>
+                    <td>@order.State</td>
+                    <td>@order.ProductName</td>
+                    <td>@order.Quantity</td>
+                    <td>@order.Type</td>
+                    <td>@order.Width</td>
+                    <td>@order.Height</td>
+                    <td>
+                        <a href='/order/edit/@order.OrderId' class="btn btn-outline-dark" role="button">
+                            Edit
+                        </a>
+                        <a href='/order/delete/@order.OrderId' class="btn btn-outline-danger" role="button">
+                            Delete
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+}
+
+@code {
+    protected List<Order> orderList = new();
+    protected List<Order> searchOrderData = new();
+    protected Order order = new();
+    protected string SearchString { get; set; } = string.Empty;
+    protected override async Task OnInitializedAsync()
+    {
+        await GetOrder();
+    }
+    protected async Task GetOrder()
+    {
+        orderList = await Http.GetFromJsonAsync<List<Order>>("api/Order");
+        searchOrderData = orderList;
+    }
+    protected void FilterOrder()
+    {
+        if (!string.IsNullOrEmpty(SearchString))
+        {
+            orderList = searchOrderData
+                .Where(x => x.OrderName.IndexOf(SearchString, StringComparison.OrdinalIgnoreCase) != -1)
+                .ToList();
+        }
+        else
+        {
+            orderList = searchOrderData;
+        }
+    }
+    protected void DeleteConfirm(int orderID)
+    {
+        order = orderList.FirstOrDefault(x => x.OrderId == orderID);
+    }
+    public void ResetSearch()
+    {
+        SearchString = string.Empty;
+        orderList = searchOrderData;
+    }
+}

@@ -1,0 +1,12 @@
+F:\Work\Personal Portfolio\Dotnet\OMSBlazor\OMSBlazor\Shared\bin\Debug\net6.0\OMSBlazor.Shared.deps.json
+F:\Work\Personal Portfolio\Dotnet\OMSBlazor\OMSBlazor\Shared\bin\Debug\net6.0\OMSBlazor.Shared.dll
+F:\Work\Personal Portfolio\Dotnet\OMSBlazor\OMSBlazor\Shared\bin\Debug\net6.0\OMSBlazor.Shared.pdb
+F:\Work\Personal Portfolio\Dotnet\OMSBlazor\OMSBlazor\Shared\obj\Debug\net6.0\OMSBlazor.Shared.csproj.AssemblyReference.cache
+F:\Work\Personal Portfolio\Dotnet\OMSBlazor\OMSBlazor\Shared\obj\Debug\net6.0\OMSBlazor.Shared.GeneratedMSBuildEditorConfig.editorconfig
+F:\Work\Personal Portfolio\Dotnet\OMSBlazor\OMSBlazor\Shared\obj\Debug\net6.0\OMSBlazor.Shared.AssemblyInfoInputs.cache
+F:\Work\Personal Portfolio\Dotnet\OMSBlazor\OMSBlazor\Shared\obj\Debug\net6.0\OMSBlazor.Shared.AssemblyInfo.cs
+F:\Work\Personal Portfolio\Dotnet\OMSBlazor\OMSBlazor\Shared\obj\Debug\net6.0\OMSBlazor.Shared.csproj.CoreCompileInputs.cache
+F:\Work\Personal Portfolio\Dotnet\OMSBlazor\OMSBlazor\Shared\obj\Debug\net6.0\OMSBlazor.Shared.dll
+F:\Work\Personal Portfolio\Dotnet\OMSBlazor\OMSBlazor\Shared\obj\Debug\net6.0\refint\OMSBlazor.Shared.dll
+F:\Work\Personal Portfolio\Dotnet\OMSBlazor\OMSBlazor\Shared\obj\Debug\net6.0\OMSBlazor.Shared.pdb
+F:\Work\Personal Portfolio\Dotnet\OMSBlazor\OMSBlazor\Shared\obj\Debug\net6.0\ref\OMSBlazor.Shared.dll
